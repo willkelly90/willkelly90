@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='index.js'></script>
+</head>
+
+<body>
+    <div>
+        <label style="display:block" for="pdf">Acta</label><textarea id="pdf" name="pdf"></textarea>
+    </div>
+    <div>
+        <label style="display:block" for="excel">Agenda</label><textarea id="excel" name="excel"></textarea>
+    </div>
+
+    <label for="output">Salida</label><br><label id="output" name="output"></label>
+
+    <script>
+        document.querySelectorAll("textarea").forEach(function (a) {
+            a.addEventListener("keyup", function () {
+                var retorno = compareContent(document.getElementById("pdf").value, document.getElementById("excel").value);
+                document.getElementById("output").innerHTML = retorno.join("\n");
+            });
+        });
+    </script>
+</body>
+
+</html>
