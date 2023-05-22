@@ -3,12 +3,7 @@ document.addEventListener("DOMContentLoaded",function(){
 	ValidateAndDisplayButton();
 	AddFormValidators();
 	PrintTimers();
-	
-	
 });
-
-
-
 
 class Timer{
 	id;
@@ -51,9 +46,7 @@ function GetStoredTimers(){
 	if(timersKW == undefined){
 		return [];
 	}
-	
-	var timers = JSON.parse(timersKW);
-	return timers;
+	return JSON.parse(timersKW);
 }
 
 
